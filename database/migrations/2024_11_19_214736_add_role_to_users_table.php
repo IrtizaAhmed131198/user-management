@@ -11,6 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('role', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
+
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger('role_id')->nullable()->after('remember_token');
             $table->foreign('role_id')->references('id')->on('role')->onDelete('set null');
