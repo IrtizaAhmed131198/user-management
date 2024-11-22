@@ -2,20 +2,18 @@
 
 namespace Tests\Unit;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use PHPUnit\Framework\TestCase;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
-class ExampleTest extends TestCase
+class LoginTest extends TestCase
 {
     /**
-     * A basic test example.
+     * A basic feature test example.
      */
-    public function test_that_true_is_true(): void
-    {
-        $this->assertTrue(true);
-    }
-
     public function user_can_log_in_with_valid_credentials()
     {
         // Arrange: Create a user
